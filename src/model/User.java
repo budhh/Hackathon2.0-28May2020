@@ -4,18 +4,18 @@ import java.util.Objects;
 
 public class User {
 
-    private final String client;
+    private final String userName;
 
-    User(String client) {
-        this.client = client;
+    User(String userName) {
+        this.userName = userName;
     }
 
-    public String getClient() {
-        return client;
+    public String getUserName() {
+        return userName;
     }
 
     public User copy() {
-        return (new User(this.client));
+        return (new User(this.userName));
     }
 
     @Override
@@ -23,19 +23,19 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return client.equals(user.client);
+        return userName.equals(user.userName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(client);
+        return Objects.hash(userName);
     }
 
 
     @Override
     public String toString() {
         return "User{" +
-                "client='" + client + '\'' +
+                "client='" + userName + '\'' +
                 '}';
     }
 }
