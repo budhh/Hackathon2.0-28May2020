@@ -44,9 +44,9 @@ public class Message {
     @Override
     public String toString() {
         String output = "";
-        output += "User [" + this.user + "] sent";
-        output += "[" + this.message + "] at";
-        output += "[" + this.instant + "]";
+        output += this.user + " sent ";
+        output += "{" + this.message + "} at ";
+        output += "{" + this.instant + "}";
         return  output;
     }
 }
