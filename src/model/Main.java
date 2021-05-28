@@ -6,6 +6,9 @@ public class Main {
 
     private static User user;
     private static Scanner input;
+    private static Scanner messageScanner;
+    private static Scanner nameScanner;
+    private static MessageLog messageLog;
 
     public static void main(String[] args) {
         messagingAppRun();
@@ -19,11 +22,11 @@ public class Main {
     }
 
     private static void setUsername() {
-        Scanner nameScanner = new Scanner(System.in);
+        nameScanner = new Scanner(System.in);
         System.out.println("Enter your username");
         String name = nameScanner.nextLine();
         user = new User(name);
-        System.out.println("Your username has been set to : " + user.getUsername());
+        System.out.println("Your username has been set to : " + user.getUserName());
     }
 
     private static void displayMenu() {
@@ -54,10 +57,21 @@ public class Main {
 
     private static void processCommand(String command) {
         if (command.equals("m")) {
-            // TODO
+            newMessage();
         } else {
             System.out.println("Selection not valid...");
         }
+    }
+
+    private static void newMessage() {
+        messageScanner = new Scanner(System.in);
+        System.out.println("New Message:");
+        String msg = messageScanner.nextLine();
+
+        System.out.println("your message was: " + msg);
+
+        Message message = new Message(msg, user);
+        messageLog.addMessageToLog(message);
     }
 }
 

@@ -1,12 +1,16 @@
 package model;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class MessageLog {
 
-    HashMap<User, Message> messageLog;
+    ArrayList<Message> messageLog;
 
-    MessageLog(HashMap log) {
-        this.messageLog = log;
+    MessageLog() {
+        this.messageLog = new ArrayList<Message>();
+    }
+
+    public void addMessageToLog(Message message) {
+        messageLog.add(message);
     }
 }
