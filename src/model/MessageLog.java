@@ -7,7 +7,7 @@ public class MessageLog {
     ArrayList<Message> messageLog;
 
     MessageLog() {
-        this.messageLog = new ArrayList<Message>();
+        this.messageLog = new ArrayList<>();
     }
 
     public void addMessageToLog(Message message) {
