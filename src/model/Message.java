@@ -20,9 +20,7 @@ public class Message {
         return message;
     }
 
-    public User getUser() {
-        return user.copy();
-    }
+    public User getUser() { return user.copy(); }
 
     public Instant getInstant() {
         return instant;
@@ -45,11 +43,10 @@ public class Message {
 
     @Override
     public String toString() {
-
-        return "Message{" +
-                "message='" + message + '\'' +
-                ", user=" + user +
-                ", instant=" + instant +
-                '}';
+        String output = "";
+        output += "User [" + this.user + "] sent";
+        output += "[" + this.message + "] at";
+        output += "[" + this.instant + "]";
+        return  output;
     }
 }
