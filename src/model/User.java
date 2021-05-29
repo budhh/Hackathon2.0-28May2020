@@ -6,7 +6,7 @@ public class User {
 
     private final String userName;
 
-    User(String userName) {
+    public User(String userName) {
         this.userName = userName;
     }
 

@@ -10,7 +10,7 @@ public class Message {
     private final User user;
     private final Instant instant;
 
-    Message(String message, User user) {
+    public Message(String message, User user) {
         this.message = message;
         this.user = user;
         this.instant = Instant.now();

@@ -7,7 +7,7 @@ public class MessageLog {
 
     ArrayDeque<Message> messageLog;
 
-    MessageLog() {
+    public MessageLog() {
         this.messageLog = new ArrayDeque<>();
     }
 
