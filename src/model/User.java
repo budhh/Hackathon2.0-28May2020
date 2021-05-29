@@ -34,8 +34,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "client='" + userName + '\'' +
-                '}';
+        return "User {" + userName + "}";
     }
 }
