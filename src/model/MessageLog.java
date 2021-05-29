@@ -1,16 +1,25 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.ArrayDeque;
+import java.util.Iterator;
 
 public class MessageLog {
 
-    ArrayList<Message> messageLog;
+    ArrayDeque<Message> messageLog;
 
     MessageLog() {
-        this.messageLog = new ArrayList<>();
+        this.messageLog = new ArrayDeque<>();
     }
 
     public void addMessageToLog(Message message) {
         messageLog.add(message);
+    }
+
+    public Iterator<Message> getIterator() {
+        return messageLog.iterator();
+    }
+
+    public Iterator<Message> getReverseIterator() {
+        return messageLog.descendingIterator();
     }
 }
