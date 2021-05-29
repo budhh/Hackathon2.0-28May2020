@@ -19,13 +19,13 @@ public class GUI implements ActionListener{
 
     private String enteredUsername;
     private String usernameDisplay;
-    JLabel usernameLabel = new JLabel("Enter the Number of Problems: " + enteredUsername);
+    JLabel usernameLabel = new JLabel("Enter Your Username: " + enteredUsername);
     private JTextField usernameField = new JTextField();
     private JButton usernameButton = new JButton("Set");
 
     private String enteredMessage;
     private String messageDisplay;
-    JLabel messageLabel = new JLabel("Enter your message and press enter");
+    JLabel messageLabel = new JLabel("Enter your message and press 'Enter'");
     private JTextField messageField = new JTextField();
     private JButton messageButton = new JButton("Enter");
 
@@ -35,7 +35,7 @@ public class GUI implements ActionListener{
             enteredUsername = usernameField.getText();
             user = new User(enteredUsername);
             usernameDisplay = usernameField.getText();
-            usernameLabel.setText("Enter the Number of Problems: " + usernameDisplay);
+            usernameLabel.setText("Enter Your Username: " + usernameDisplay);
 
         }
     };
@@ -45,7 +45,7 @@ public class GUI implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             enteredMessage = messageField.getText();
             messageDisplay = messageField.getText();
-            messageLabel.setText("Enter the Number of Problems: " + messageDisplay);
+            messageLabel.setText("Enter your message and press 'Enter'");
             Message message = new Message(enteredMessage, user);
             messageLog.addMessageToLog(message);
 
@@ -64,7 +64,10 @@ public class GUI implements ActionListener{
         panel.add(usernameButton);
 
         // Set Up Editable Text Area
-
+        panel.add(messageLabel);
+        panel.add(messageField);
+        usernameButton.addActionListener(messageAL);
+        panel.add(messageButton);
 
 //        // Questions
 //        JLabel questionsLabel = new JLabel("Questions: ");
