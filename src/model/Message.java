@@ -21,7 +21,7 @@ public class Message {
     }
 
     public User getUser() {
-        return user.copy();
+        return user;
     }
 
     public Instant getInstant() {
@@ -33,9 +33,7 @@ public class Message {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Message message1 = (Message) o;
-        return message.equals(message1.message) &&
-                user.equals(message1.user) &&
-                instant.equals(message1.instant);
+        return message.equals(message1.message) && user.equals(message1.user) && instant.equals(message1.instant);
     }
 
     @Override

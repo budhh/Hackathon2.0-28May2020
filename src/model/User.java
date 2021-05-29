@@ -1,21 +1,22 @@
 package model;
 
+import java.time.Instant;
 import java.util.Objects;
 
 public class User {
 
     private final String userName;
 
-    public User(String userName) {
-        this.userName = userName;
+    public User() {
+        this.userName = getRandomUserName();
+    }
+
+    private String getRandomUserName(){
+        return "" + Instant.now().getEpochSecond();
     }
 
     public String getUserName() {
         return userName;
-    }
-
-    public User copy() {
-        return (new User(this.userName));
     }
 
     @Override
@@ -31,9 +32,8 @@ public class User {
         return Objects.hash(userName);
     }
 
-
     @Override
     public String toString() {
-        return "User {" + userName + "}";
+        return "User " + userName;
     }
 }

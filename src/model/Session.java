@@ -19,8 +19,7 @@ public class Session {
     private static void setUsername() {
         nameScanner = new Scanner(System.in);
         System.out.println("Enter your username");
-        String name = nameScanner.nextLine();
-        user = new User(name);
+        user = new User();
         System.out.println("Your username has been set to : " + user.getUserName());
     }
 
