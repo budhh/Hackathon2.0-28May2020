@@ -1,16 +1,13 @@
 package ui;
 
-import model.User;
-import javax.swing.*;
+import javax.swing.JFrame;
 
 public class Main {
     public static void main(String[] args) {
-
         JFrame frame = new JFrame();
-        User user = new User();
-        frame.setTitle(user.toString());
+        frame.setTitle("Private Chat");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(new GUI_Frame(user));
+        frame.add(new ClientGUI());
         frame.pack();
         frame.setVisible(true);
     }
