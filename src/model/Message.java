@@ -16,7 +16,7 @@ public class Message {
         this.instant = Instant.now();
     }
 
-    public String getMessage() {
+    public String getMessageBody() {
         return message;
     }
 
