@@ -26,10 +26,15 @@ public class ClientGUI extends JPanel {
         messageLog = new MessageLog();
         messageLogPanel = new JPanel();
         JPanel organizer = new JPanel();
+        JScrollPane textAreaScroll = new JScrollPane(getMessageLogPanel(),
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        textAreaScroll.setPreferredSize(new Dimension(400, 400));
 
         organizer.setLayout(new BorderLayout());
         organizer.setBorder(new EmptyBorder(0, 0, 0, 0));
-        organizer.add(getMessageLogPanel(), BorderLayout.NORTH);
+        organizer.add(textAreaScroll, BorderLayout.NORTH);
+//        organizer.add(getMessageLogPanel(), BorderLayout.NORTH);
         organizer.add(getMessageInpPanel(), BorderLayout.SOUTH);
         organizer.setBackground(new Color(0xffffff));
         setLayout(new FlowLayout());
@@ -37,8 +42,8 @@ public class ClientGUI extends JPanel {
     }
 
     private JPanel getMessageLogPanel() {
-        messageLogPanel.setPreferredSize(new Dimension(400, 400));
-        messageLogPanel.setLayout(new FlowLayout());
+        messageLogPanel.setPreferredSize(new Dimension(400, 600));
+        //messageLogPanel.setLayout(new FlowLayout());
         messageLogPanel.setBorder(new EmptyBorder(0, 0, 0, 0));
         return messageLogPanel;
     }
@@ -71,7 +76,7 @@ public class ClientGUI extends JPanel {
         messageBody.setEditable(false);
         messageBody.setFocusable(false);
         messageBody.setBackground(new Color(0xf1f2f6));
-        messageBody.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+        messageBody.setFont(UIManager.getFont("Label.font"));
         messageBody.setBorder(new EmptyBorder(5, 0, 5, 0));
 
         panel.add(username, BorderLayout.NORTH);
