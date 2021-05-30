@@ -25,7 +25,6 @@ public class ClientGUI extends JPanel {
         user = new User();
         messageLog = new MessageLog();
         messageLogPanel = new JPanel();
-        messageLogPanel.add(messagePanel(new Message("hi", user)));
         JPanel organizer = new JPanel();
 
         organizer.setLayout(new BorderLayout());
